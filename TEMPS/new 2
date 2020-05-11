@@ -1,0 +1,4 @@
+SELECT C.*,u.name,u.surname,p.title FROM comment c
+JOIN user u ON u.id = c.userid
+JOIN product p ON p.id = c.productid
+ORDER BY c.id DESC

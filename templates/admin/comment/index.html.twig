@@ -1,0 +1,57 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Edit Messages{% endblock %}
+
+{% block body %}
+    <div class="dashboard-wrapper">
+        <div class="container-fluid dashboard-content">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <h1>Comment index</h1>
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Subject</th>
+                            <th>Comment</th>
+                            <th>Status</th>
+                            <th>Ip</th>
+                            <th>User</th>
+                            <th>Product</th>
+                            <th>Updated_at</th>
+                            <th>Rate</th>
+                            <th>actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for comment in comments %}
+                            <tr>
+                                <td>{{ comment.id }}</td>
+                                <td>{{ comment.subject }}</td>
+                                <td>{{ comment.comment }}</td>
+                                <td>{{ comment.status }}</td>
+                                <td>{{ comment.ip }}</td>
+                                <td><a href="{{ path('admin_user_show', {'id': comment.id}) }}">{{ comment.name }} {{ comment.surname }}</a></td>
+                                <td><a href="{{ path('admin_product_show', {'id': comment.id}) }}">{{ comment.title }}</a></td>
+                                <td>{{ comment.created_at}}</td>
+                                <td>{{ comment.rate }}</td>
+                                <td>
+                                    <a href="{{ path('admin_comment_show', {'id': comment.id}) }}">show</a>
+                                    <a href="{{ path('admin_comment_edit', {'id': comment.id}) }}">edit</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="10">no records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

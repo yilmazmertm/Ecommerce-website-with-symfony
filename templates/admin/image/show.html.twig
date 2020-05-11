@@ -1,0 +1,43 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Image{% endblock %}
+
+{% block body %}
+
+    <div class="dashboard-wrapper">
+    <div class="container-fluid dashboard-content">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <h3 class="text-center">
+
+    <h1>Image</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ image.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ image.title }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ image.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_image_index') }}">back to list</a>
+
+    <a href="{{ path('admin_image_edit', {'id': image.id}) }}">edit</a>
+
+    {{ include('admin/image/_delete_form.html.twig') }}
+
+
+    </h3>
+            </div>
+        </div>
+    </div>
+{% endblock %}

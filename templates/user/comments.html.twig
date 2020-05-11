@@ -1,0 +1,58 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %}{{ app.user.name }} Profile{% endblock %}
+
+{% block body %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+
+                    {{ include('user/usermenu.html.twig') }}
+
+                </div>
+                <div class="col-sm-9">
+                    <div class="blog-post-area">
+                        <h2 class="title text-center">User Comments</h2>
+                        <div class="single-blog-post">
+
+
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Comment</th>
+                                    <th>Status</th>
+                                    <th>Product</th>
+                                    <th>Created_at</th>
+                                    <th>Rate</th>
+                                    <th>actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for comment in comments %}
+                                    <tr>
+                                        <td>{{ comment.subject }}</td>
+                                        <td>{{ comment.comment }}</td>
+                                        <td>{{ comment.status }}</td>
+                                        <td nowrap><a href="{{ path('product_show', {'id': comment.productid}) }}">{{ comment.title }}</a></td>
+                                        <td>{{ comment.created_at}}</td>
+                                        <td>{{ comment.rate }}</td>
+                                        <td>
+                                            <a href="" class="btn-danger"> Delete </a>
+                                        </td>
+                                    </tr>
+                                {% else %}
+                                    <tr>
+                                        <td colspan="10">no records found</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+
+
+                        </div>
+                    </div>
+    </section><!--/blog-post-area-->
+{% endblock %}

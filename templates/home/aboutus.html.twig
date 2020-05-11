@@ -1,0 +1,28 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %}About Us | {{setting[0].title}}{% endblock %}
+{% block keywords %}{{setting[0].keywords}}  {% endblock %}
+{% block description %} {{setting[0].description}} {% endblock %}
+
+{% block body %}
+    <section>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-9">
+                    <div class="blog-post-area">
+                        <h2 class="title text-center">About Us </h2>
+                        <div class="single-blog-post">
+                            <p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+                            </p>
+                            <h1>Settingsden gelen</h1>
+                            <p>
+                                {{ setting[0].aboutus |raw }}
+                            </p>
+
+
+
+                        </div>
+                    </div>
+    </section><!--/blog-post-area-->
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Edit Product{% endblock %}
+
+{% block body %}
+
+    <div class="dashboard-wrapper">
+    <div class="container-fluid dashboard-content">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <h3 class="text-center">
+
+
+    <h1>Edit Product</h1>
+
+    {{ include('admin/product/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_product_index') }}" class="btn btn-space btn-secondary">back to list</a>
+
+    {{ include('admin/product/_delete_form.html.twig') }}
+
+
+    </h3>
+            </div>
+        </div>
+    </div>
+{% endblock %}

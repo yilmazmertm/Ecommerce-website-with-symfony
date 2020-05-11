@@ -1,0 +1,27 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %}{{ app.user.name }} Profile{% endblock %}
+
+{% block body %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+
+                {{ include('user/usermenu.html.twig') }}
+
+            </div>
+            <div class="col-sm-9">
+                <div class="blog-post-area">
+                    <h2 class="title text-center">User Comments</h2>
+                    <div class="single-blog-post">
+
+
+    {{ include('product/_form.html.twig') }}
+
+    <a href="{{ path('user_product_index') }}">back to list</a>
+
+                    </div>
+                </div>
+</section><!--/blog-post-area-->
+{% endblock %}

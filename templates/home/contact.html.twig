@@ -1,0 +1,82 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %}Contact | {{setting[0].title}}{% endblock %}
+{% block keywords %}{{setting[0].keywords}}  {% endblock %}
+{% block description %} {{setting[0].description}} {% endblock %}
+
+{% block body %}
+
+    <div id="contact-page" class="container">
+        <div class="bg">
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="col-sm-5 ">
+                    <div class="contact-form">
+                        <h2 class="title text-center">Get In Touch</h2>
+                        {% include('messages.html.twig') %}
+
+                        <div class="status alert alert-success" style="display: none"></div>
+                        <form id="main-contact-form" class="contact-form row" name="messages" method="post">
+                            <div class="form-group col-md-6">
+                                <input type="text" id="messages_name" name="messages[name]" class="form-control" required="required" placeholder="Name and Surname">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="email" id="messages_email" name="messages[email]" class="form-control" required="required" placeholder="Email">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="text" id="messages_subject" name="messages[subject]" class="form-control" maxlength="100" required="required" placeholder="Subject">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <textarea id="messages_message" name="messages[message]" required="required" class="form-control" rows="8" placeholder="Your Message Here"></textarea>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="hidden" name="token" value="{{  csrf_token('form-message') }}" />
+                                <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="contact-info">
+                        <h2 class="title text-center">Contact Info</h2>
+                        <address>
+                            {{ setting[0].contact |raw }}
+                        </address>
+                        <div class="gmaps">
+                            <iframe src="https://www.google.com/maps/d/embed?mid=1C6Oaz8WOmuYcCV19bEx_Jg5iGiA" width="600" height="300"></iframe>
+                        </div>
+                        <div class="social-networks">
+                            <h2 class="title text-center">Social Networking</h2>
+                            <ul>
+                                <li>
+                                    <a href="{{setting[0].facebook}}"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="{{setting[0].twitter}}"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="{{setting[0].instagram}}"><i class="fa fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--/#contact-page-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

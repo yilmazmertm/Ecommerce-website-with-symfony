@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+    {% block title %}Register{% endblock %}
+
+    {% block body %}
+        <h1>Register</h1>
+
+        {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button class="btn">Register</button>
+        {{ form_end(registrationForm) }}
+    {% endblock %}
+
+
+
+
+</div>
+<div class="card-footer bg-white p-0  ">
+    <div class="card-footer-item card-footer-item-bordered">
+        <a href="#" class="footer-link">Create An Account</a></div>
+    <div class="card-footer-item card-footer-item-bordered">
+        <a href="#" class="footer-link">Forgot Password</a>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- ============================================================== -->
+<!-- end login page  -->
+<!-- ============================================================== -->
+<!-- Optional JavaScript -->
+<script src="{{asset('assets/admin/vendor/jquery/jquery-3.3.1.min.js')}}"></script>
+<script src="{{asset('assets/admin/vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
+<script src="{{asset('assets/admin/vendor/slimscroll/jquery.slimscroll.js')}}"></script>
+<script src="{{asset('assets/admin/libs/js/main-js.js')}}"></script>
+
+</body>
+
+</html>
